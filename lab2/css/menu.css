@@ -1,0 +1,132 @@
+/* ===== Страница «Собрать ланч» ===== */
+
+.menu-section {
+    margin-bottom: 55px;
+}
+
+.menu-section__title {
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #000;
+}
+
+/* Блок с блюдами: CSS Grid, 3 колонки по 1fr */
+.dishes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    min-width: 0;
+}
+
+/* Блок каждого блюда: Flex, вертикальное направление */
+.dish {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 30px 40px;
+    border: 2px solid transparent;
+    border-radius: 35px;
+    background-color: #fff;
+    cursor: pointer;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+}
+
+.dish:hover {
+    border: 2px solid tomato;
+}
+
+/* Кнопка внутри карточки меняется при наведении на карточку (контекстный селектор) */
+.dish:hover .dish__button {
+    background-color: tomato;
+    color: #fff;
+}
+
+.dish__img {
+    width: 100%;
+    height: auto;
+    border-radius: 35px;
+    object-fit: cover;
+}
+
+.dish__price {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #000;
+}
+
+.dish__name {
+    margin-top: 5px;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: #000;
+}
+
+.dish__count {
+    margin-top: auto;
+    padding-top: 15px;
+    font-size: 16px;
+    color: #8a8a8a;
+}
+
+.dish__button {
+    margin-top: 15px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f1eee9;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 16px;
+    color: #000;
+    cursor: pointer;
+}
+
+/* ===== Адаптивность ===== */
+@media (max-width: 800px) {
+    .dishes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 600px) {
+    .dishes {
+        grid-template-columns: 1fr;
+    }
+
+    .header__title {
+        text-align: center;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav__link {
+        font-size: 24px;
+    }
+
+    .menu-section__title {
+        text-align: center;
+    }
+
+    .dish {
+        padding: 25px 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .menu-section__title {
+        font-size: 22px;
+    }
+
+    .dish {
+        padding: 20px 22px;
+    }
+}
